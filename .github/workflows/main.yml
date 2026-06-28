@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker Image
-        run: docker build -t abdallaahhegazy/flask-app:latest .
+        run: docker build -t abdallaahhegazy/flask-app-new:latest .
 
       - name: Run Container
-        run: docker run -d -p 5000:5000 --name flask abdallaahhegazy/flask-app:latest
+        run: docker run -d -p 5000:5000 --name flask abdallaahhegazy/flask-app-new:latest
 
       - name: Wait
         run: sleep 5
@@ -32,7 +32,7 @@ jobs:
             --password-stdin
 
       - name: Push Docker Image
-        run: docker push abdallaahhegazy/flask-app:latest
+        run: docker push abdallaahhegazy/flask-app-new:latest
 
       - name: Show Running Containers
         run: docker ps
